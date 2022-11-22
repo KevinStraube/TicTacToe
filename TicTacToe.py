@@ -18,7 +18,17 @@ def play():
     while True:
         if ' ' not in grid:
             return 'X'
-        square = int(input("Enter a number from 1-9 to choose square: "))
+        
+        square = input("Enter a number from 1-9 to choose square: ")
+        if not square.isnumeric():
+            print("Please enter a valid number")
+            continue
+        else:
+            square = int(square)
+            if square < 1 or square > 9:
+                print("Number out of range, try again")
+                continue
+
         idx = gridMapping[square]
         if grid[idx] != ' ':
             print("invalid selection, try again")
