@@ -1,5 +1,6 @@
 import random
 
+#Hashmap for game grid
 gridMapping = {
         1: 0,
         2: 2,
@@ -12,6 +13,7 @@ gridMapping = {
         9: 16
     }
 
+#Loop to play the game
 def play():
     grid = " | | \n | | \n | | "
     turn = 1
@@ -50,6 +52,7 @@ def play():
     
     return turn
 
+#Function to test if there is a winner
 def checkWinner(grid):
     if grid[0] == grid[2] == grid[4] and grid[0] != ' ':
         return True
